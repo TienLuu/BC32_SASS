@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import "./Base/reset";
+@import "./Base/customize";
+@import "./Helper/variables";
+
+/*
+=============================================
+                    HEADER
+=============================================
+*/
+header {
+   position: absolute;
+   width: 100%;
+   font-size: 13px;
+
+   z-index: 1000;
+
+   .navbar-brand img {
+      width: 80px;
+   }
+
+   .nav-item {
+      padding: 0 50px 0 0;
+
+      &:hover .nav-link {
+         color: $color--secondary;
+      }
+   }
+
+   .nav-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: $color--text;
+      line-height: 80px;
+
+      transition: color 0.3s ease;
+   }
+
+   .header__barMenu {
+      font-size: 0.9em;
+      line-height: 38px;
+
+      align-items: center;
+   }
+
+   .header__contact {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $color--white;
+      line-height: 1;
+
+      margin: 6px;
+      padding: 1.1em 1.5em;
+      border-radius: 50px;
+      box-shadow: 0 0 0 3em $color--secondary inset;
+
+      transition: all 0.3s ease;
+
+      i {
+         color: $color--white;
+
+         padding-right: 0.5em;
+         transition: color 0.3s ease;
+      }
+
+      &:hover {
+         box-shadow: 0 0 0 1px $color--secondary inset;
+         color: $color--secondary;
+
+         i {
+            color: $color--secondary;
+         }
+      }
+   }
+
+   .header__socialMedia {
+      a {
+         display: inline-block;
+         line-height: 38px;
+
+         margin-left: 1em;
+         transition: color 0.3s ease;
+
+         &:hover i {
+            color: $color--secondary;
+         }
+      }
+   }
+}
+
+/*
+=============================================
+                    BANNER
+=============================================
+*/
+.banner {
+   overflow: hidden;
+}

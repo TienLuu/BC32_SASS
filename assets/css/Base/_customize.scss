@@ -1,0 +1,38 @@
+/*
+=============================================
+                CUSTOMIZE BS4
+=============================================
+*/
+.container {
+   padding-right: 30px;
+   padding-left: 30px;
+}
+.navbar {
+   padding: 0;
+}
+
+.navbar-brand {
+   padding-bottom: 0;
+   padding-top: 0;
+}
+
+.navbar-collapse {
+   justify-content: flex-end;
+}
+
+.nav-link {
+   padding: 0;
+}
+
+@media (min-width: 1200px) {
+   header .container {
+      max-width: 1260px;
+   }
+}
+
+@media (min-width: 576px) {
+   .navbar-expand-sm .navbar-nav .nav-link {
+      padding-right: 0;
+      padding-left: 0;
+   }
+}

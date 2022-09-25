@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"); /*
+=============================================
+                GLOBAL
+=============================================
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #191919;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/*
+=============================================
+                CUSTOMIZE BS4
+=============================================
+*/
+.container {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.nav-link {
+  padding: 0;
+}
+
+@media (min-width: 1200px) {
+  header .container {
+    max-width: 1260px;
+  }
+}
+@media (min-width: 576px) {
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+/*
+=============================================
+                    HEADER
+=============================================
+*/
+header {
+  position: absolute;
+  width: 100%;
+  font-size: 13px;
+  z-index: 1000;
+}
+header .navbar-brand img {
+  width: 80px;
+}
+header .nav-item {
+  padding: 0 50px 0 0;
+}
+header .nav-item:hover .nav-link {
+  color: #b61984;
+}
+header .nav-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #181818;
+  line-height: 80px;
+  transition: color 0.3s ease;
+}
+header .header__barMenu {
+  font-size: 0.9em;
+  line-height: 38px;
+  align-items: center;
+}
+header .header__contact {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1;
+  margin: 6px;
+  padding: 1.1em 1.5em;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3em #b61984 inset;
+  transition: all 0.3s ease;
+}
+header .header__contact i {
+  color: #ffffff;
+  padding-right: 0.5em;
+  transition: color 0.3s ease;
+}
+header .header__contact:hover {
+  box-shadow: 0 0 0 1px #b61984 inset;
+  color: #b61984;
+}
+header .header__contact:hover i {
+  color: #b61984;
+}
+header .header__socialMedia a {
+  display: inline-block;
+  line-height: 38px;
+  margin-left: 1em;
+  transition: color 0.3s ease;
+}
+header .header__socialMedia a:hover i {
+  color: #b61984;
+}
+
+/*
+=============================================
+                    BANNER
+=============================================
+*/
+.banner {
+  overflow: hidden;
+}/*# sourceMappingURL=styles.css.map */
