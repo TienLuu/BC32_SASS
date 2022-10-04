@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="UTF-8">
-    <meta name="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabula SASS</title>
     <link rel="icon" href="../../assets/images/download (13).png">
@@ -17,25 +17,37 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- ANIMATE CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- WOW CSS -->
+    <link rel="stylesheet" href="../../assets/css/Vendors/animate.css">
+
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css">
 </head>
 
-<body>
+<body id="body">
     <!-- ================ HEADER =============== -->
-    <header>
+    <header id="header">
         <div class="container">
-            <nav class="navbar navbar-expand-sm">
+            <nav class="navbar navbar-expand-xl" id="navbar">
                 <a class="navbar-brand" href="#">
                     <img src="../../assets/images/crest.png" alt="Header Brand">
                 </a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"
+                    id="navbar-toggler">
+                    <span class="navbar-toggler-icon" id="togglerIcon">
+                        <i class="fa-solid fa-bars active" id="openIcon" data-type="openIcon"></i>
+                    </span>
                 </button>
+                <i class="fa-solid fa-xmark" id="closeIcon" data-type="closeIcon"></i>
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav">
+                        <li class="nav-item" id="navbarImg">
+                            <img src="../../assets/images/crest.png" alt="Header Brand">
+                        </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Home</a>
                         </li>
@@ -80,33 +92,334 @@
         </div>
     </header>
 
-    <!-- ================ BANNER =============== -->
-    <section class="banner">
-        <div class="banner__bgTop">
-            <img src="../../assets/images/yellow_top_wave_01.png" alt="Banner Background Yellow">
-        </div>
-        <div class="banner__content row">
-            <div class="content-left col-12 col-md-6">
-                <span>ABOUT US</span>
-                <h1>
-                    The language teaching experts
-                </h1>
-            </div>
-            <div class="content-right col-12 col-md-6">
-                <img src="../../assets/images/hero_team.png" alt="Banner Image">
-            </div>
-        </div>
-    </section>
+    <main id="main">
+        <div class="main__wrapper">
+            <!-- ================ BANNER =============== -->
+            <section class="banner">
+                <div class="container">
+                    <div class="banner__content row">
+                        <div class="content-left col-12 col-lg-6 animate__animated animate__slideInLeft">
+                            <span>ABOUT US</span>
+                            <h1>
+                                The language teaching experts
+                            </h1>
+                        </div>
+                        <div class="content-right col-12 col-lg-6 wow animate__animated animate__fadeIn"
+                            data-wow-delay="0.5s">
+                            <img src="../../assets/images/hero_team.png" alt="Banner Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="banner__bgTop">
+                    <img src="../../assets/images/yellow_top_wave_01.png" alt="Banner Background Yellow">
+                </div>
+                <div class="banner__bgBottom">
+                    <img src="../../assets/images/Violet_top_left_wave.png" alt=" Banner Background Grey">
+                </div>
+            </section>
 
-    <!-- Footer Icon -->
-    <!-- <i class="fa-regular fa-alarm-clock"></i>
-    <i class="fa-solid fa-location-pin"></i> -->
+            <!-- ================ TEACHER =============== -->
+            <section class="teacher">
+                <div class="teacher__list container">
+                    <div class="row">
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="0.1s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_1.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>ITALIAN</span>
+                                    <h4 class="card-title">July Roberts</h4>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="0.4s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_2.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>FRENCH</span>
+                                    <h4 class="card-title">Jon Stone</h4>
+                                    <p class="card-text">
+                                        Nanotechnology immersion along the information.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="0.7s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_3.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>JAPANESE</span>
+                                    <h4 class="card-title">Emma Stone</h4>
+                                    <p class="card-text">
+                                        Bring to the table win-win survival strategies to ensure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="1s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_4.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>CHINESE</span>
+                                    <h4 class="card-title">Mark Lee</h4>
+                                    <p class="card-text">
+                                        Proactive domination. At the end of the day, going forward.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="0.1s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_5.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>RUSSIAN</span>
+                                    <h4 class="card-title">John Doe</h4>
+                                    <p class="card-text">
+                                        A new normal that has evolved from generation X.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="0.4s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_6.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>SWEDEN</span>
+                                    <h4 class="card-title">Jane Smith</h4>
+                                    <p class="card-text">
+                                        Heading towards a streamlined cloud solution.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="0.7s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_7.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>SPANISH</span>
+                                    <h4 class="card-title">Hanna Alverez</h4>
+                                    <p class="card-text">
+                                        Content in real-time will have multiple touchpoints.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher__member col-12 col-md-6 col-lg-3 wow animate__animated animate__fadeIn"
+                            data-wow-delay="1s">
+                            <div class="card text-left">
+                                <span>
+                                    <img class="card-img-top" src="../../assets/images/teacher_8.jpg"
+                                        alt="Teacher Image">
+                                </span>
+                                <div class="teacher__info">
+                                    <span>ITALIAN</span>
+                                    <h4 class="card-title">July Roberts</h4>
+                                    <p class="card-text">
+                                        Capitalize on low hanging fruit to identify a ballpark.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="teacher__bottom">
+                    <img src="../../assets/images/Wave_White_bottom_right_shape_01.png" alt="Teacher Background Image">
+                </div>
+            </section>
 
-    <!-- Form Icon -->
-    <!-- <i class="fa-regular fa-user"></i>
-    <i class="fa-regular fa-envelope"></i>
-    <i class="fa-solid fa-graduation-cap"></i>
-    <i class="fa-solid fa-message"></i> -->
+            <!-- ================ CONTACT =============== -->
+            <section class="contact">
+                <div class="contact__wrapper">
+                    <div class="contact__main">
+                        <div class="row">
+                            <div class="contact__left col-12 col-lg-7 wow animate__animated animate__slideInLeft">
+                                <div class="contact__img">
+                                    <img src="../../assets/images/conatct_inner.png" alt="Contact Image">
+                                </div>
+                            </div>
+                            <div class="contact__right col-12 col-lg-5 wow animate__animated animate__fadeIn">
+                                <div class="contact__bgForm">
+                                    <div class="contact__form">
+                                        <h4>Find Your Course</h4>
+                                        <div class="form-group">
+                                            <div class="contact__row">
+                                                <div class="contact-name">
+                                                    <span>
+                                                        <i class="fa-regular fa-user"></i>
+                                                    </span>
+                                                    <input type="text" placeholder="Name">
+                                                </div>
+                                                <div class="contact-email">
+                                                    <span>
+                                                        <i class="fa-regular fa-envelope"></i>
+                                                    </span>
+                                                    <input type="email" placeholder="E-mail">
+                                                </div>
+                                            </div>
+                                            <div class="contact__row">
+                                                <div class="contact-list">
+                                                    <span>
+                                                        <i class="fa-solid fa-graduation-cap"></i>
+                                                    </span>
+                                                    <div class="contact__select" id="contactSelect">
+                                                        <div class="trigger" data-target-1="languageList">
+                                                            English
+                                                        </div>
+                                                        <div class="arrow"></div>
+                                                        <ul class="options">
+                                                            <li data-value="English" class="selected">English</li>
+                                                            <li data-value="French" class="">French</li>
+                                                            <li data-value="Spanish" class="">Spanish</li>
+                                                            <li data-value="German" class="">German</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="contact__row">
+                                                <div class="contact-message">
+                                                    <span>
+                                                        <i class="fa-solid fa-message"></i>
+                                                    </span>
+                                                    <textarea cols="40" rows="10" placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="contact__row contact__btn">
+                                                <input type="button" id="btnSubmit" value="SEND">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact__bottom">
+                    <img src="../../assets/images/accent_bottom_wave_01.png" alt="Contact Background Image">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ================ FOOTER =============== -->
+    <footer>
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="row footer__content">
+                    <div class="footer__col1 col-12 col-sm-6 col-lg-3 mb-5 wow animate__animated animate__fadeIn"
+                        data-wow-delay="0.1s">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-pin"></i>
+                                <span>Franklin St, Greenpoint Ave</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone-flip"></i>
+                                <span>+2342 5446 67</span>
+                            </li>
+                            <li>
+                                <i class="fa-sharp fa-solid fa-clock"></i>
+                                <span>Monday - Friday: 8 AM - 5 PM</span>
+                            </li>
+                        </ul>
+                        <div class="footer__socialMedia">
+                            <a href="#">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="footer__col2 col-12 col-sm-6 col-lg-3 mb-5 wow animate__animated animate__fadeIn"
+                        data-wow-delay="0.4s">
+                        <h4>Quick Links</h4>
+                        <div class="d-flex">
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">Course</a>
+                                </li>
+                                <li>
+                                    <a href="#">Schedule</a>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col3 col-12 col-sm-6 col-lg-3 mb-5 wow animate__animated animate__fadeIn"
+                        data-wow-delay="0.7s">
+                        <h4>About</h4>
+                        <div class="d-flex">
+                            <ul>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Events</a>
+                                </li>
+                                <li>
+                                    <a href="#">Get Quote</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col4 col-12 col-sm-6 col-lg-3 mb-5 wow animate__animated animate__fadeIn"
+                        data-wow-delay="1s">
+                        <h4>Newsletter</h4>
+                        <form class="footer__form">
+                            <input type="email" id="emailInput" placeholder="Your email">
+                            <input type="submit" id="btnSubmit" value="SUBSCRIBE">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- OPTIONAL JAVASCRIPT -->
     <!-- JQUERY FIRST, THEN POPPER.JS, THEN BOOTSTRAP JS -->
@@ -120,8 +433,76 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+    <!-- WOW JS -->
+    <script src="../../assets/js/wow.min.js"></script>
+
     <!-- MAIN JS -->
-    <!-- <script src=""></script> -->
+    <script>
+        // Wow init
+        new WOW().init();
+    </script>
+
+    <script>
+        function domByQuery(selector) {
+            return document.querySelector(selector)
+        }
+
+        // handle animation
+        domByQuery('#navbar').addEventListener('click', (e) => {
+            const element = e.target.closest('[data-type]')
+            if (!element) return
+
+            const dataType = element.dataset.type
+            if (dataType === "openIcon") {
+                domByQuery('#openIcon').classList.remove('active')
+                domByQuery('#closeIcon').classList.add('active')
+                domByQuery('#main').classList.add('active')
+                domByQuery('#body').classList.add('noscroll')
+            } else {
+                domByQuery('#openIcon').classList.add('active')
+                domByQuery('#closeIcon').classList.remove('active')
+                domByQuery('#collapsibleNavId').classList.remove('show')
+                domByQuery('#navbar-toggler').classList.add('collapsed')
+                domByQuery('#main').classList.remove('active')
+                domByQuery('#body').classList.remove('noscroll')
+            };
+        })
+
+        // Open and close select option form
+        domByQuery('.contact').addEventListener('click', (e) => {
+            const element = e.target.closest('[data-target-1]')
+            if (!element) {
+                domByQuery('.options').classList.remove('open')
+                domByQuery('.arrow').classList.remove('active')
+                return
+            }
+
+            domByQuery('.options').classList.add('open')
+            domByQuery('.arrow').classList.add('active')
+        })
+
+        domByQuery('.options').addEventListener('click', (e) => {
+            const element = e.target.closest('[data-value]')
+            if (!element) return
+
+            const dataValue = element.dataset.value
+
+            domByQuery('.trigger').textContent = dataValue
+            domByQuery('.options').classList.remove('open')
+            domByQuery('.arrow').classList.remove('active')
+        })
+    </script>
+
+    <script>
+        // Position fixed navbar
+        window.addEventListener("scroll", e => {
+            if (window.scrollY > 200) {
+                domByQuery('#header').classList.add('scrolled')
+            } else {
+                domByQuery('#header').classList.remove('scrolled')
+            }
+        });
+    </script>
 </body>
 
 </html>

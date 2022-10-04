@@ -1,0 +1,121 @@
+/*
+=============================================
+                    HEADER
+=============================================
+*/
+header {
+   position: absolute;
+   width: 100%;
+
+   font-size: $fs--2;
+
+   z-index: 1000;
+   @extend .transition;
+
+   .navbar-brand img {
+      width: 80px;
+   }
+
+   .nav-item {
+      padding: 0 50px 0 0;
+
+      &:hover .nav-link {
+         color: $color--secondary;
+      }
+   }
+
+   .nav-link {
+      @include styleText($fs--2, $fw--3, $color--text);
+      line-height: 80px;
+
+      @extend .transition;
+   }
+
+   .header__barMenu {
+      align-items: center;
+
+      font-size: $fs--3;
+      line-height: 38px;
+   }
+
+   .header__contact {
+      margin: 6px;
+      padding: 1.1em 1.5em;
+
+      @extend .btnSecondary;
+
+      i {
+         color: $color--white;
+         padding-right: 0.5em;
+
+         @extend .transition;
+      }
+
+      &:hover {
+         @extend .btnSecondaryHover;
+
+         i {
+            color: $color--secondary;
+         }
+      }
+   }
+
+   .header__socialMedia {
+      a {
+         display: inline-block;
+         line-height: 38px;
+
+         margin-left: 1em;
+
+         @extend .transition;
+
+         &:hover i {
+            color: $color--secondary;
+         }
+      }
+   }
+}
+
+// Header fixed when scroll to bottom
+#header.scrolled {
+   position: fixed;
+   @include boxShadow(0, 0, $size--3, 0, $color--grey-1);
+   background-color: $color--white;
+}
+
+#header.scrolled .navbar-brand {
+   visibility: hidden;
+}
+
+#header.scrolled .navbar-brand img {
+   height: 0;
+}
+
+#header.scrolled .nav-link {
+   line-height: 45px;
+}
+
+#header.scrolled .header__contact {
+   padding: 0.8em 1.5em;
+}
+
+// Screen width < 1260px
+#navbarImg {
+   display: none;
+
+   img {
+      width: 90px;
+   }
+}
+
+.fa-xmark {
+   padding: 0;
+   font-size: 2rem;
+   color: $color--secondary;
+}
+
+.fa-bars,
+.fa-xmark {
+   visibility: hidden;
+   line-height: 1.6;
+}

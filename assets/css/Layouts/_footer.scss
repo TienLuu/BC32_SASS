@@ -1,0 +1,129 @@
+/*
+=============================================
+                    FOOTER
+=============================================
+*/
+footer {
+   background-image: url(../images/footer_background.jpg);
+   @extend .background-cover;
+
+   font-size: $fs--1;
+
+   padding: 8em 0;
+   overflow: hidden;
+
+   .footer__wrapper {
+      max-width: 100%;
+      color: $color--white;
+
+      .row {
+         @include innerMGLR($size--13, $size--13);
+      }
+
+      a {
+         color: $color--white;
+      }
+
+      h4 {
+         @extend .sub-title;
+
+         margin-bottom: 1em;
+      }
+
+      li {
+         display: block;
+         font-size: $fs--4;
+         font-family: "Roboto", Arial, Helvetica, sans-serif;
+         line-height: 1.1;
+
+         span {
+            padding-left: 0.8em;
+         }
+      }
+   }
+
+   .footer__col1 {
+      li {
+         margin-bottom: 1em;
+      }
+   }
+
+   .footer__col2 li,
+   .footer__col3 li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      line-height: 1;
+      padding: 0.8em 0;
+
+      @extend .transition;
+
+      &:hover a {
+         opacity: 0.8;
+      }
+   }
+
+   .footer__col4 {
+      @include innerPDLR($size--11, $size--11);
+
+      h4 {
+         margin-bottom: 45px;
+      }
+
+      #emailInput {
+         display: block;
+         width: 100%;
+         height: 3.2em;
+
+         text-align: center;
+         line-height: 1;
+         padding: 1em;
+         margin-bottom: 0.5em;
+
+         background: transparent;
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         border-radius: 50px;
+
+         outline: none;
+         caret-color: $color--white;
+
+         @extend .transition;
+
+         &::placeholder {
+            @include styleText($fs--2, $fw--2, $color--white);
+         }
+
+         &:focus {
+            border: 1px solid $color--white;
+         }
+      }
+
+      #btnSubmit {
+         width: 100%;
+         height: 4em;
+         letter-spacing: 1px;
+
+         margin-bottom: 110px;
+         border: none;
+
+         @extend .btnSecondaryTrans;
+
+         &:hover {
+            @extend .btnSecondaryTransHover;
+         }
+      }
+   }
+}
+
+.footer__socialMedia {
+   margin-top: 2em;
+
+   a {
+      display: inline-block;
+      margin-right: 0.8em;
+
+      @extend .transition;
+
+      &:hover {
+         color: $color--text;
+      }
+   }
+}

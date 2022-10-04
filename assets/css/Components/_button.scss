@@ -1,0 +1,24 @@
+.btnSecondary {
+   @include styleBtnSecondary;
+   @include boxShadow(0, 0, 0, $size--6, $color--secondary, inset);
+   @include styleText($fs--4, $fw--3, $color--white);
+   @extend .transition;
+}
+
+.btnSecondaryTrans {
+   @include styleBtnSecondary;
+   @include boxShadow(0, 0, 0, $size--6, $color--white, inset);
+   @include styleText($fs--input, $fw--3, $color--text);
+   @extend .transition;
+   background-color: $color--transparent;
+}
+
+.btnSecondaryHover {
+   color: $color--secondary;
+   @include boxShadow(0, 0, 0, $size--2, $color--secondary, inset);
+}
+
+.btnSecondaryTransHover {
+   color: $color--white;
+   @include boxShadow(0, 0, 0, $size--2, $color--white, inset);
+}

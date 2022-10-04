@@ -9,15 +9,15 @@
    box-sizing: border-box;
 }
 html {
-   font-size: 15px;
+   font-size: $fs--1;
+   min-height: $height--1;
 }
 
 body {
    font-family: "Montserrat", Arial, Helvetica, sans-serif;
    font-weight: 400;
    line-height: 1.8em;
-   background-size: cover;
-   background-attachment: fixed;
+   min-height: $height--1;
 }
 
 ul {
@@ -30,7 +30,7 @@ li {
 
 a {
    text-decoration: none;
-   color: #191919;
+   color: $color--text;
 }
 
 a:hover {
@@ -38,5 +38,46 @@ a:hover {
 }
 
 img {
-   width: 100%;
+   max-width: 100%;
+}
+
+.transition {
+   transition: all 0.3s ease;
+}
+
+.sup-title {
+   font-size: $fs--8;
+   font-weight: $fw--4;
+}
+
+.title {
+   font-size: $fs--7;
+   font-weight: $fw--4;
+}
+
+.sub-title {
+   font-size: $fs--6;
+   font-weight: $fw--4;
+}
+
+.placeholder {
+   color: $color--text;
+   font-family: "Roboto", Arial, Helvetica, sans-serif;
+   opacity: 0.6;
+}
+
+.inputStyle {
+   @include boxShadow(0, 0, $size--7, 0, $color--black-2);
+   border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.inputFont {
+   font-size: $fs--input;
+   font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.background-cover {
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
 }

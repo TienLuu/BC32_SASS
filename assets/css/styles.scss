@@ -1,99 +1,449 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+// Helpers
+@import "./Helper/variables";
+@import "./Helper/mixin";
+
+// Vendors
+
+// Base
 @import "./Base/reset";
 @import "./Base/customize";
-@import "./Helper/variables";
 
-/*
-=============================================
-                    HEADER
-=============================================
-*/
-header {
-   position: absolute;
-   width: 100%;
-   font-size: 13px;
+// Components
+@import "./Components/button";
 
-   z-index: 1000;
+// Layouts
+@import "./Layouts/header";
+@import "./Layouts/footer";
 
-   .navbar-brand img {
-      width: 80px;
-   }
+// Pages
+@import "./Base/reponsive";
 
-   .nav-item {
-      padding: 0 50px 0 0;
-
-      &:hover .nav-link {
-         color: $color--secondary;
-      }
-   }
-
-   .nav-link {
-      font-size: 13px;
-      font-weight: 600;
-      color: $color--text;
-      line-height: 80px;
-
-      transition: color 0.3s ease;
-   }
-
-   .header__barMenu {
-      font-size: 0.9em;
-      line-height: 38px;
-
-      align-items: center;
-   }
-
-   .header__contact {
-      display: inline-block;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: $color--white;
-      line-height: 1;
-
-      margin: 6px;
-      padding: 1.1em 1.5em;
-      border-radius: 50px;
-      box-shadow: 0 0 0 3em $color--secondary inset;
-
-      transition: all 0.3s ease;
-
-      i {
-         color: $color--white;
-
-         padding-right: 0.5em;
-         transition: color 0.3s ease;
-      }
-
-      &:hover {
-         box-shadow: 0 0 0 1px $color--secondary inset;
-         color: $color--secondary;
-
-         i {
-            color: $color--secondary;
-         }
-      }
-   }
-
-   .header__socialMedia {
-      a {
-         display: inline-block;
-         line-height: 38px;
-
-         margin-left: 1em;
-         transition: color 0.3s ease;
-
-         &:hover i {
-            color: $color--secondary;
-         }
-      }
-   }
-}
-
+// Theme
 /*
 =============================================
                     BANNER
 =============================================
 */
 .banner {
+   position: relative;
+
    overflow: hidden;
+
+   .banner__bgTop {
+      position: absolute;
+      top: 0;
+      left: 0;
+   }
+
+   .banner__bgBottom {
+      position: absolute;
+      bottom: 0;
+   }
+
+   .banner__content {
+      position: relative;
+      align-items: center;
+
+      @include innerPDTB($size--8, $size--8);
+
+      z-index: 1;
+
+      h1 {
+         @extend .sup-title;
+      }
+
+      span {
+         @include styleText($fs--9, $fw--3, $color--secondary);
+
+         margin-bottom: 0.5em;
+      }
+
+      .content-left {
+         @include innerMGTB($size--6, $size--6);
+      }
+   }
+}
+
+/*
+=============================================
+                    TEACHER
+=============================================
+*/
+.teacher {
+   background-color: $color--bg;
+   position: relative;
+
+   .teacher__list {
+      position: relative;
+      z-index: 2;
+   }
+
+   .teacher__member {
+      margin-top: 40px;
+   }
+
+   .card {
+      border: none;
+      border-radius: 10px;
+
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+
+      span {
+         display: block;
+         overflow: hidden;
+      }
+
+      img {
+         // Nếu không có attribute này ảnh sẽ bị sê dịch khi trở lại trạng thái ban đầu
+         transform: scale3d(1, 1, 1);
+         transition: transform 650ms ease-in-out, filter 650ms ease-in-out;
+      }
+
+      &:hover {
+         @include boxShadow(0, $size--5, $size--5, $size--4, $color--black-1);
+
+         img {
+            transform: scale3d(1.05, 1.05, 1.05);
+         }
+      }
+   }
+
+   .teacher__info {
+      text-align: center;
+      padding: 20px 1.7em 20px 1.7em;
+
+      span {
+         @include styleText($fs--5, $fw--3, $color--secondary);
+
+         margin-bottom: 0.7em;
+      }
+
+      h4 {
+         @extend .sub-title;
+      }
+
+      p {
+         font-family: "Roboto", Arial, Helvetica, sans-serif;
+         color: $color--text;
+      }
+   }
+
+   .teacher__bottom {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+   }
+}
+
+/*
+=============================================
+                    CONTACT
+=============================================
+*/
+.contact {
+   position: relative;
+
+   .contact__wrapper {
+      position: relative;
+      bottom: 35px;
+      width: 1000px;
+
+      margin: 0 auto;
+      padding-top: 4em;
+
+      z-index: 3;
+   }
+
+   .contact__main {
+      max-width: calc(100% + 40px);
+      @include innerMGLR($size--9, $size--9);
+
+      .row {
+         @include innerMGLR(0, 0);
+      }
+
+      .contact__left,
+      .contact__right {
+         padding-top: 4em;
+      }
+
+      .contact__left,
+      .contact__img,
+      .contact__right {
+         @include innerPDLR($size--10, $size--10);
+      }
+   }
+
+   .contact__bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 0;
+   }
+}
+
+.contact__bgForm {
+   text-align: center;
+
+   border-radius: 10px;
+   padding: 0 25px;
+   background-color: $color--white;
+
+   @include boxShadow(0, $size--5, $size--5, $size--4, $color--black-1);
+
+   h4 {
+      @extend .title;
+
+      @include innerMGTB($size--11, $size--12);
+   }
+
+   .form-group {
+      text-align: left;
+      margin: 0;
+      padding-bottom: 40px;
+
+      .contact__row {
+         display: flex;
+         flex-wrap: wrap;
+
+         padding-bottom: 1em;
+
+         input {
+            font-size: $fs--input;
+            height: 3.7em;
+            width: 100%;
+
+            padding: 1em 1em 1em 3.5em;
+
+            border-radius: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+
+            outline: none;
+            overflow: hidden;
+
+            @extend .transition;
+         }
+      }
+
+      .contact-name,
+      .contact-email {
+         position: relative;
+         width: 50%;
+
+         span {
+            position: absolute;
+            left: 1em;
+            top: 50%;
+
+            transform: translateY(-50%);
+         }
+      }
+
+      .contact-name {
+         padding-right: 1em;
+      }
+
+      .contact-list {
+         position: relative;
+         width: 100%;
+
+         span {
+            position: absolute;
+            left: 1em;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            z-index: 1;
+         }
+
+         .options {
+            display: none;
+            color: $color--text;
+
+            position: absolute;
+            top: auto;
+            left: 0;
+            width: 100%;
+            max-height: 320px;
+
+            margin: 0;
+            padding: 0;
+
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            background-color: $color--white;
+
+            list-style: none;
+            overflow: auto;
+
+            @extend .transition;
+
+            &.open {
+               display: block;
+               z-index: 20;
+            }
+
+            li {
+               display: block;
+               font-size: $fs--input;
+               font-family: "Roboto", Arial, Helvetica, sans-serif;
+
+               padding-left: 3.5em;
+
+               cursor: pointer;
+               @extend .transition;
+
+               &hover {
+                  color: $color--secondary;
+               }
+            }
+         }
+      }
+
+      .contact-message {
+         position: relative;
+         width: 100%;
+
+         textarea {
+            @extend .inputFont;
+            line-height: 1.5;
+
+            width: 100%;
+            height: 90px;
+
+            padding: 1em 1em 1em 3.5em;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+
+            outline: none;
+         }
+
+         span {
+            position: absolute;
+            left: 1em;
+            top: 12px;
+
+            line-height: 1.5em;
+         }
+      }
+
+      .trigger {
+         display: flex;
+         align-items: center;
+         width: 100%;
+         height: 3.2em;
+
+         @extend .inputFont;
+         line-height: 3.2em;
+
+         padding: 0 0 0 3.5em;
+         border: 1px solid rgba(0, 0, 0, 0.25);
+         border-radius: 50px;
+
+         outline: none;
+         opacity: 0.6;
+      }
+
+      .arrow {
+         position: absolute;
+         right: 1.5em;
+         top: 15px;
+         height: 6px;
+         width: 6px;
+
+         opacity: 0.6;
+         @extend .transition;
+
+         &::before,
+         &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            width: 0.1rem;
+            height: 100%;
+         }
+
+         &::before {
+            left: 2px;
+
+            transform: rotate(-45deg);
+            background-color: $color--secondary;
+         }
+
+         &::after {
+            left: -2px;
+
+            transform: rotate(45deg);
+            background-color: $color--secondary;
+         }
+
+         &.active {
+            transform: rotate(-180deg);
+         }
+      }
+   }
+}
+
+.contact__row {
+   input {
+      &:focus {
+         @extend .inputStyle;
+      }
+
+      &::placeholder {
+         @extend .placeholder;
+      }
+   }
+
+   .trigger {
+      .open {
+         @extend .inputStyle;
+      }
+   }
+
+   textarea {
+      &:focus {
+         @extend .inputStyle;
+      }
+
+      &::placeholder {
+         @extend .placeholder;
+      }
+   }
+
+   select {
+      &::placeholder {
+         @extend .placeholder;
+      }
+   }
+
+   span i {
+      color: $color--secondary;
+   }
+
+   &.contact__btn {
+      padding: 2em 0 1.5em;
+      max-width: 150px;
+
+      input#btnSubmit {
+         height: 4em;
+         padding: 0;
+
+         letter-spacing: 1px;
+         @extend .btnSecondary;
+      }
+
+      &:hover input#btnSubmit {
+         background-color: $color--transparent;
+
+         @extend .btnSecondaryHover;
+      }
+   }
 }

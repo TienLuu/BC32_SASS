@@ -1,0 +1,57 @@
+@mixin styleText($fs, $fw, $color) {
+   font-size: $fs;
+   font-weight: $fw;
+   color: $color;
+}
+
+@mixin styleBtnSecondary {
+   display: inline-block;
+   line-height: 1;
+
+   border-radius: 50px;
+   cursor: pointer;
+}
+
+@mixin styleTextWhenHover($color) {
+   color: $color;
+}
+
+@mixin boxShadow($valuA, $valueB, $valueC, $valueD, $color, $option: false) {
+   @if $option {
+      box-shadow: $valuA $valueB $valueC $valueD $color $option;
+   } @else {
+      box-shadow: $valuA $valueB $valueC $valueD $color;
+   }
+}
+
+@mixin innerPDTB($pdTop, $pdBottom) {
+   padding-top: $pdTop;
+   padding-bottom: $pdBottom;
+}
+
+@mixin innerPDLR($pdLeft, $pdRight) {
+   padding-left: $pdLeft;
+   padding-right: $pdRight;
+}
+
+@mixin innerMGTB($mgTop, $mgBottom) {
+   margin-top: $mgTop;
+   margin-bottom: $mgBottom;
+}
+
+@mixin innerMGLR($mgLeft, $mgRight) {
+   margin-left: $mgLeft;
+   margin-right: $mgRight;
+}
+
+@mixin responsive($screen) {
+   @if (map-has-key($map: $breakpoints, $key: $screen)) {
+      $value: map-get(
+         $map: $breakpoints,
+         $key: $screen,
+      );
+      @media (max-width: $value) {
+         @content;
+      }
+   }
+}
