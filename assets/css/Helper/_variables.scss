@@ -12,22 +12,21 @@ $color--black-1: rgb(0 0 0 / 20%);
 $color--black-2: rgb(0 0 0 / 10%);
 
 // Font-size
-$fs--1: 15px;
 $fs--2: 13px;
-$fs--3: 0.9em;
-$fs--4: 0.9rem;
-$fs--5: 0.75rem;
-$fs--6: 1.55rem;
-$fs--7: 2.5rem;
+$fs--1: 15px;
+
 $fs--input: 0.8em;
-$fs--8: 3.8rem;
-$fs--9: 1.1rem;
-$fs--10: 3.15rem;
+$fs--3: 0.9em;
+
+$fs--5: 0.75rem;
+$fs--4: 0.9rem;
 $fs--11: 1rem;
+$fs--9: 1.1rem;
+$fs--6: 1.55rem;
 $fs--12: 2rem;
-$font-size--medium: 20px;
-$font-size--large: 36px;
-$font-size--x-large: 42px;
+$fs--7: 2.5rem;
+$fs--10: 3.15rem;
+$fs--8: 3.8rem;
 
 // Font-weight
 $fw--1: 400;
@@ -41,21 +40,23 @@ $height--1: 101vh;
 // Size
 $size--1: 0;
 $size--2: 1px;
+$size--16: 2px;
+$size--7: 4px;
+$size--17: 5px;
 $size--3: 10px;
 $size--4: -10px;
-$size--5: 30px;
-$size--6: 3em;
-$size--7: 4px;
-$size--8: 4rem;
-$size--9: -20px;
-$size--10: 20px;
-$size--11: 40px;
-$size--12: 50px;
-$size--13: -40px;
 $size--14: 15px;
+$size--10: 20px;
+$size--9: -20px;
+$size--5: 30px;
 $size--15: 35px;
-$size--16: 2px;
-$size--17: 5px;
+$size--11: 40px;
+$size--13: -40px;
+$size--12: 50px;
+
+$size--6: 3em;
+
+$size--8: 4rem;
 
 // BreakPoints
 $breakpoints: (

@@ -1,0 +1,72 @@
+@include responsive("extra-large") {
+   .container {
+      max-width: inherit;
+   }
+
+   // CSS when event click btnOpen Navbar
+   main {
+      position: relative;
+      overflow: hidden;
+   }
+
+   .main__wrapper {
+      transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+   }
+
+   #main.active .main__wrapper {
+      transform: translateX(320px);
+   }
+}
+
+@include responsive("extra-large-1") {
+   .banner .banner__content .content-left h1 {
+      font-size: $fs--10;
+   }
+
+   .banner .banner__content .content-left span {
+      font-size: $fs--11;
+   }
+
+   .contact .contact__wrapper {
+      width: auto !important;
+   }
+
+   .contact .contact__wrapper .contact__main {
+      @include innerMGLR(0, 0);
+   }
+}
+
+@include responsive("large") {
+   .teacher .teacher__info {
+      min-height: 170px;
+   }
+
+   .contact .contact__wrapper .contact__main .contact__right {
+      @include innerPDLR($size--15, $size--15);
+   }
+}
+
+@include responsive("medium") {
+   .contact__bgForm .contact__row.contact__btn {
+      padding: 1.5em 0;
+      max-width: none;
+   }
+
+   .contact__bgForm .form-group .contact__row .contact-name,
+   .contact__bgForm .form-group .contact__row .contact-email {
+      width: 100%;
+   }
+
+   .contact__bgForm .form-group .contact__row .contact-name {
+      padding-bottom: 1em;
+      padding-right: 0;
+   }
+
+   .contact__bgForm .form-group .contact__row .contact-name span {
+      top: 40%;
+   }
+
+   .contact .contact__bgForm h4 {
+      font-size: 2rem;
+   }
+}

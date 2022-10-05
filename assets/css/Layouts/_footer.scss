@@ -127,3 +127,20 @@ footer {
       }
    }
 }
+
+/*
+=============================================
+                RESPONSIVE
+=============================================
+*/
+@include responsive("extra-large") {
+   footer .footer__wrapper .footer__content.row {
+      @include innerMGLR(0, 0);
+   }
+}
+
+@include responsive("extra-large-1") {
+   footer .footer__content .footer__col4 {
+      @include innerPDLR($size--14, $size--14);
+   }
+}
