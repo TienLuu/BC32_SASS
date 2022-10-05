@@ -125,7 +125,7 @@ header {
                 RESPONSIVE
 =============================================
 */
-@include responsive('"extra-large"') {
+@include responsive("extra-large") {
    header .container {
       padding: 0;
    }
